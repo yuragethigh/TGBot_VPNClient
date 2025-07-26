@@ -1,3 +1,4 @@
+#payments.py
 from __future__ import annotations
 
 import asyncio
@@ -99,13 +100,9 @@ async def _after_success_payment(bot, user_id: int, days: int, info: dict | None
     try:
         print("[FLOW] after_success start")
         xui = get_xui_client()
-        await xui.ensure_login()
 
-        uid = str(uuid.uuid4())
-        email = f"user_{user_id}@bot"
-        expiry_ms = int((datetime.now(tz=timezone.utc) + timedelta(days=days)).timestamp() * 1000)
-
-        link = await xui.add_client(uuid_str=uid, email=email, expiry_ms=expiry_ms, limit_gb=0)
+        # ВАЖНО: никакого add_client напрямую
+        link = await xui.upsert_client(tg_user_id=user_id, days=days, limit_gb=0)
 
         if info:
             try:

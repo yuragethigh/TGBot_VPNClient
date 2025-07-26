@@ -15,9 +15,9 @@ class Config:
     XUI_IGNORE_SSL = os.getenv("XUI_IGNORE_SSL", "1") == "1"  
 
     # DATA FOR VLESS LINK
-    LINK_HOST = os.getenv("LINK_HOST", "212.69.84.243")
-    LINK_PORT = int(os.getenv("LINK_PORT", "443"))
-    LINK_TAG_PREFIX = os.getenv("LINK_TAG_PREFIX", "Home")
+    LINK_HOST = os.getenv("LINK_HOST")
+    LINK_PORT = os.getenv("LINK_PORT")
+    LINK_TAG_PREFIX = os.getenv("LINK_TAG_PREFIX")
 
     VLESS_PBK = os.getenv("VLESS_PBK")
     VLESS_FP = os.getenv("VLESS_FP")
@@ -33,7 +33,7 @@ class Config:
     YK_RETURN_URL = os.getenv("YK_RETURN_URL")
 
     # Тарифы
-    PLAN_MONTH_PRICE = int(os.getenv("PLAN_MONTH_PRICE", "399"))
-    PLAN_MONTH_DAYS = int(os.getenv("PLAN_MONTH_DAYS", "30"))
-    PLAN_3MONTH_PRICE = int(os.getenv("PLAN_3MONTH_PRICE", "1000"))
-    PLAN_3MONTH_DAYS = int(os.getenv("PLAN_3MONTH_DAYS", "90"))
+    PLAN_MONTH_PRICE = int(os.getenv("PLAN_MONTH_PRICE"))
+    PLAN_MONTH_DAYS = int(os.getenv("PLAN_MONTH_DAYS"))
+    PLAN_3MONTH_PRICE = int(os.getenv("PLAN_3MONTH_PRICE"))
+    PLAN_3MONTH_DAYS = int(os.getenv("PLAN_3MONTH_DAYS"))
